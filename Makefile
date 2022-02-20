@@ -14,12 +14,10 @@ test:
 	@coverage run -m pytest tests/*.py
 	@coverage report -m --omit=$(VIRTUAL_ENV)/lib/python*
 
+clean:
+	@rm -f */version.txt
+	@rm -f .coverage
+	@rm -Rf */__pycache__
+	@rm -Rf */*.pyc
 
-say_hello:
-	echo "creating empty file"
-	touch text.txt
-
-
-say_buy:
-	echo "removing empty file"
-	rm -rf *.txt
+all: install_requirements install test

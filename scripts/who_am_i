@@ -4,4 +4,4 @@
 from toto.lib import *
 
 
-who_am_i()
+print(who_am_i())
